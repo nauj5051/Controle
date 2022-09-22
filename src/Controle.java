@@ -75,8 +75,6 @@ public class Controle {
             }
             else{
                 System.out.println("QUAL CANAL");
-                String s1 = digite.next();
-                int nome = 58;
             }
            }
         }
