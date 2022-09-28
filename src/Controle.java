@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 public class Controle {
     int aumentarCanal = getCanais();
@@ -67,10 +66,10 @@ public class Controle {
             System.out.println("CANAL 13: GLOBO");
         }
         else if (mudarDecanal != 2 && mudarDecanal != 4 && mudarDecanal != 6 && mudarDecanal != 9 && mudarDecanal != 13){
-            System.out.println("CANAL INDISPONÍVEL, TENTE OUTRO");
+            System.out.println("ESSE CANAL NÃO EXISTE, TENTE OUTRO");
         }
     }
-    public void mudarCanalbotao() throws IOException{
+    public void mudarCanaladd(){
         Scanner digiteres = new Scanner(System.in);
         System.out.println("DESEJA MUDAR DE CANAL?");
         String respostaS = digiteres.nextLine();
@@ -107,10 +106,50 @@ public class Controle {
             }  
         } 
     if (aumentarCanal != 2 || aumentarCanal != 4 || aumentarCanal != 6 || aumentarCanal != 9 || aumentarCanal != 13 ){
-        System.out.println("SEU CANAL É O: " +aumentarCanal + ", E NÃO ESTÁ DISPONÍVEL, DESEJA CONTINUAR MUDANDO?" );
+        System.out.println("SEU CANAL É O: " +aumentarCanal + ", E ELE NÃO EXISTEM, DESEJA MUDAR DE CANAL?" );
         String resposta = digiteres.nextLine();
         while (resposta.equals("SIM")){
             aumentarCanal ++ ;
+            if(aumentarCanal == 2){
+                System.out.println("SEU CANAL É O 2 : SBT, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 4){
+                System.out.println("SEU CANAL É O 4 : BAND, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 6){
+                System.out.println("SEU CANAL É O 6 : REDE TV, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 9){
+                System.out.println("SEU CANAL É O 9 : RECORD, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 13){
+                System.out.println("SEU CANAL É O 13 : GLOBO, DESEJA MUDAR DE CANAL?");
+            }
+            else if( aumentarCanal > 13){
+                System.out.println("NÃO EXISTE CANAL MAIOR DO QUE 13");
+            }
+            else if (aumentarCanal != 2 && aumentarCanal != 4 && aumentarCanal != 6 && aumentarCanal != 9 && aumentarCanal != 13){            
+            System.out.println("SEU CANAL É O: " + aumentarCanal + " E ELE NÃO EXISTE, DESEJA MUDAR DE CANAL NOVAMENTE? ");
+            }
+            resposta = digiteres.nextLine();
+            if (resposta.equals("NÃO")) {        
+            break;
+            }       
+            }  
+        }
+    }
+    public void mudarCanalSub(){
+        Scanner digiteres = new Scanner(System.in);
+        System.out.println("DESEJA MUDAR DE CANAL?");
+        String respostaS = digiteres.nextLine();
+        if(respostaS.equals("SIM")){
+        aumentarCanal = getCanais() - 1;
+    } 
+    if (aumentarCanal == 2 || aumentarCanal == 4 || aumentarCanal == 6 || aumentarCanal == 9 || aumentarCanal == 13 ){
+        System.out.println("SEU CANAL É O: " +aumentarCanal + ", DESEJA MUDAR DE CANAL?" );
+        String resposta = digiteres.nextLine();
+        while (resposta.equals("SIM")){
+            aumentarCanal -- ;
             if(aumentarCanal == 2){
                 System.out.println("SEU CANAL É O 2 : SBT, DESEJA MUDAR DE CANAL?");
             }
@@ -134,8 +173,41 @@ public class Controle {
             break;
             }       
             }  
+        } 
+    if (aumentarCanal != 2 || aumentarCanal != 4 || aumentarCanal != 6 || aumentarCanal != 9 || aumentarCanal != 13 ){
+        System.out.println("SEU CANAL É O: " +aumentarCanal + ", E ELE NÃO EXISTE, DESEJA MUDAR DE CANAL?" );
+        String resposta = digiteres.nextLine();
+        while (resposta.equals("SIM")){
+            aumentarCanal -- ;
+            if(aumentarCanal == 2){
+                System.out.println("SEU CANAL É O 2 : SBT, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 4){
+                System.out.println("SEU CANAL É O 4 : BAND, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 6){
+                System.out.println("SEU CANAL É O 6 : REDE TV, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 9){
+                System.out.println("SEU CANAL É O 9 : RECORD, DESEJA MUDAR DE CANAL?");
+            }
+            else if(aumentarCanal == 13){
+                System.out.println("SEU CANAL É O 13 : GLOBO, DESEJA MUDAR DE CANAL?");
+            }
+            else if( aumentarCanal <= 1){
+                System.out.println("NÃO EXISTE CANAL MENOR DO QUE 2");
+            }
+            else if (aumentarCanal != 2 && aumentarCanal != 4 && aumentarCanal != 6 && aumentarCanal != 9 && aumentarCanal != 13){            
+            System.out.println("SEU CANAL É O: " + aumentarCanal + " E ELE NÃO EXISTE, DESEJA MUDAR DE CANAL NOVAMENTE? ");
+            }
+            resposta = digiteres.nextLine();
+            if (resposta.equals("NÃO")) {        
+            break;
+            }       
+            }  
         }
     }
+
 }
 
 
